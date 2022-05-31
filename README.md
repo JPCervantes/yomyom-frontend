@@ -90,6 +90,10 @@ You will recibe the following response:
 
 The app will be available on [http://localhost:3000]
 
+====
+Important: The backend server yomyom-backend must be up at port [http://localhost:8080]
+====
+
 ## Available Scripts
 
 Install dependencies:
