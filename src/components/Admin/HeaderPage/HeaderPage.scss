@@ -1,0 +1,12 @@
+.header-page-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  > h2 {
+    margin-top: 0;
+  }
+  .button.ui.negative {
+    background-color: red !important;
+  }
+}

@@ -1,0 +1,32 @@
+.intro-test {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    h1, h2, h3 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    h1 {
+        margin-top: 150px !important;
+    }
+
+    .ui.fluid.button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 80px;
+        margin: 100px;
+
+    }
+}
+
+body {
+    background-color: khaki !important;
+}

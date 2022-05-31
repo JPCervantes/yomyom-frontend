@@ -1,0 +1,34 @@
+.menu {
+    display: flex;
+    &__hour-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 20px;
+    }
+    &__row-item {
+        display: grid;
+        grid-template-columns: 1.8fr 0.2fr;
+
+    }
+}
+
+h3 {
+    margin: 5px !important;
+}
+
+
+.ui.fluid.dropdown {
+    background-color:  rgb(255, 239, 195) !important;
+    width: 150px !important;
+}
+
+.visible.menu.transition {
+    background-color:  rgb(255, 239, 195) !important;
+}
+
+.ui.divider {
+    margin: 7px !important;
+}
+
+

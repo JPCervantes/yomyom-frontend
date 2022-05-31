@@ -1,0 +1,40 @@
+.side-menu-admin {
+  .ui.menu {
+    width: 250px !important;
+    overflow: hidden;
+    padding-top: 4em;
+    z-index: 99 !important;
+    background-color: rgba(241, 162, 42, 0.459) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around;
+
+    a {
+      display: flex !important;
+      justify-content: flex-start;
+      margin: 10px 0;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+
+  }
+  i.icon {
+    float: initial !important;
+    margin: 0 !important;
+    margin-right: 10px !important;
+  }
+
+  .content {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    width: calc(100% - 250px);
+  }
+
+}
