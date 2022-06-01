@@ -1,12 +1,5 @@
 export const BASE_API = 'http://127.0.0.1:8080/api/v1';
 export const HOURS = [
-    {text : "01:00:00", key: 1 , value: "01:00:00"},
-    {text : "02:00:00", key: 2 , value: "02:00:00"},
-    {text : "03:00:00", key: 3 , value: "03:00:00"},
-    {text : "04:00:00", key: 4 , value: "04:00:00"},
-    {text : "05:00:00", key: 5 , value: "05:00:00"},
-    {text : "06:00:00", key: 6 , value: "06:00:00"},
-    {text : "07:00:00", key: 7 , value: "07:00:00"},
     {text : "08:00:00", key: 8 , value: "08:00:00"},
     {text : "09:00:00", key: 9 , value: "09:00:00"},
     {text : "10:00:00", key: 10 , value: "10:00:00"},
@@ -21,7 +14,5 @@ export const HOURS = [
     {text : "19:00:00", key: 19 , value: "19:00:00"},
     {text : "20:00:00", key: 21 , value: "20:00:00"},
     {text : "21:00:00", key: 22 , value: "21:00:00"},
-    {text : "22:00:00", key: 23 , value: "22:00:00"},
-    {text : "23:00:00", key: 24 , value: "23:00:00"},
-    {text : "00:00:00", key: 25 , value: "00:00:00"}
+    {text : "22:00:00", key: 23 , value: "22:00:00"}
 ]

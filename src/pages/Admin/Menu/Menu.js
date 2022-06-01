@@ -5,9 +5,9 @@ import moment from 'moment';
 import { useCategory } from '../../../hooks';
 import { TableMenu } from '../../../components/Admin'
 import { forEach } from 'lodash';
-
-
 import './Menu.scss'
+
+
 
 export function Menu() {
 
@@ -22,7 +22,6 @@ export function Menu() {
     const now = moment(currentHour, "HH:mm:ss")
 
     useEffect(() => {
-      return async () => {
         setCurrentCategories([]);
         forEach( categories, async (category) => {
             const startHour = moment(category.timestart, "HH:mm:ss");
@@ -30,24 +29,20 @@ export function Menu() {
             if (now >= startHour && now < endHour) {
                 const result = await getCategoryById(category.id)
                 setCurrentCategories(currentCategories => [...currentCategories, result])
-            }
-        })
+            }})
         onRefetch();
-    }
     }, [currentHour])
     
 
     useEffect(() => {
-
       setHoursFormated(HOURS)
     }, [currentHour])
 
     useEffect(() => { getCategories() }, [])
-    
 
-    const HandleChangeHour = (hour) => {
+    const HandleChangeHour = (hour, currentCategories) => {
         setCurrentHour(hour);
-        setCurrentCategories([]);
+        setCurrentCategories(currentCategories);
         onRefetch();
     }
 
@@ -61,15 +56,14 @@ export function Menu() {
             selection 
             search 
             options={hoursFormated}
-            onChange={(_, data) => HandleChangeHour(data.value)}
+            onChange={(_, data) => HandleChangeHour(data.value, currentCategories)}
         />
     </div>
-        <h2>El menú a las {currentHour} es: </h2>
+        <h2>El menú a las {currentHour} es: </h2>    
         <TableMenu 
             activeCategories={currentCategories}
             onRefetch={onRefetch} 
-        />
-
+        />  
     </div>
   )
 }
