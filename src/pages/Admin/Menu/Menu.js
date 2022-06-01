@@ -11,10 +11,8 @@ import './Menu.scss'
 
 export function Menu() {
 
-    const today = moment()
-
     const [hoursFormated, setHoursFormated] = useState([])
-    const [currentHour, setCurrentHour] = useState(today.format("HH:mm:ss"))
+    const [currentHour, setCurrentHour] = useState("00:00:00")
     const { categories, getCategories, getCategoryById } = useCategory();
     const [ currentCategories, setCurrentCategories] = useState([])
     const [ refetch, setRefetch ] = useState(false);  
@@ -25,6 +23,7 @@ export function Menu() {
 
     useEffect(() => {
       return async () => {
+        setCurrentCategories([]);
         forEach( categories, async (category) => {
             const startHour = moment(category.timestart, "HH:mm:ss");
             const endHour = moment(category.timeend, "HH:mm:ss");
@@ -39,20 +38,16 @@ export function Menu() {
     
 
     useEffect(() => {
-        const current = {text : "Hora Actual", key: -1 , value: moment().format("HH:mm:ss")}
-        if (HOURS.includes(current)) {
-            HOURS.unshift(current)
-        }
 
       setHoursFormated(HOURS)
     }, [currentHour])
 
     useEffect(() => { getCategories() }, [])
+    
 
     const HandleChangeHour = (hour) => {
         setCurrentHour(hour);
         setCurrentCategories([]);
-        console.table("CurrentCategories en change hour", currentCategories)
         onRefetch();
     }
 
